@@ -1,0 +1,510 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+
+/* load type */
+@charset "UTF-8";
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url("fonts/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url("fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'RobotoSlab-Bold';
+  src: url("fonts/RobotoSlab-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+/* global */
+body {
+  text-align: center;
+}
+
+a {
+  text-decoration:none;
+}
+
+/*  typography */
+.t-heading {
+  font-family: 'RobotoSlab-Bold', sans-serif;
+  font-size: 42px;
+  letter-spacing: .4px;
+  line-height: 1.3em;
+  margin-bottom: 28px;
+  color: #095949;
+}
+
+.section__desc {
+  font-family: 'Roboto-light', sans-serif;
+  font-size: 18px;
+  line-height: 1.7em;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.t-link {
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #39A796;
+  text-decoration: none;
+  transition-duration: .1s;
+  transition-property: color;
+}
+
+.t-link:hover {
+  color: #ED5940;
+}
+
+.t-link-footer {
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #32A896;
+  text-decoration: none;
+  transition-duration: .1s;
+  transition-property: color;
+}
+
+.t-link-footer:hover {
+  color: #ED5940;
+}
+
+
+/*  CTA */
+.button {
+  margin: 0;
+  padding: 12px 30px 12px;
+  display: inline-block;
+  border: 2px solid #ED5940;
+  border-radius: 4px;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 18px;
+  letter-spacing: .5px;
+  text-decoration: none;
+  color: #ED5940;
+  transition-duration: .2s;
+  transition-property: background, color;
+}
+
+.button:hover {
+  background: #ED5940;
+  color: #fff;
+}
+
+/*  mobile nav */
+@media (max-width: 849px) {
+  .nav__icon {
+    position: fixed;
+    margin-right: -14px;
+    padding: 14px;
+    right: 5.625%;
+  }
+}
+
+@media (min-width: 850px) {
+  .nav__icon {
+    display: none;
+  }
+}
+
+@media (max-width: 849px) {
+  .nav__icon__top,
+  .nav__icon__middle,
+  .nav__icon__bottom {
+    display: block;
+    height: 2px;
+    width: 18px;
+    background-color: #fff;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  .nav__icon__top:not(:last-child),
+  .nav__icon__middle:not(:last-child),
+  .nav__icon__bottom:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+
+@media (max-width: 849px) {
+  .nav__links {
+    display: none;
+  }
+}
+
+/*  nav */
+.nav {
+  width: 100%;
+  background-color: #39A796;
+  overflow: auto;
+}
+
+.nav__bar {
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+}
+
+.home {
+  float: left;
+}
+
+@media (min-width: 850px) {
+  .home {
+  float: left;
+  padding-top: 21px;
+  padding-bottom: 22px;
+  }
+}
+@media (max-width: 849px) {
+  .home {
+  float: left;
+  padding-top: 11px;
+  padding-bottom: 10px;
+  }
+}
+
+.soember-logo {
+  font-family: 'RobotoSlab-Bold', sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 850px) {
+  .soember-logo {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 849px) {
+  .soember-logo {
+    font-size: 24px;
+  }
+}
+
+.nav__links {
+  margin-top:30px;
+  float:right;
+}
+
+.nav__link {
+  margin-left:20px;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition-duration: .1s;
+  transition-property: opacity;
+}
+
+.nav__link:hover {
+  opacity: .6;
+}
+
+/* header */
+.header {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  width:100%;
+  background: repeating-linear-gradient(
+  45deg,
+  #FBF4E5,
+  #FBF4E5 2px,
+  #FDF8EF 2px,
+  #FDF8EF 10px
+);
+}
+
+.l-header__logo {
+  padding: 0 28%;
+}
+
+.header__logo {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.header__heading {
+  font-family: 'RobotoSlab-Bold', sans-serif;
+  text-align: center;
+  color: #095949;
+  margin-top: 24px;
+  margin-bottom:18px;
+}
+
+@media (min-width: 850px) {
+  .header__heading {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 849px) {
+  .header__heading {
+    font-size: 42px;
+  }
+}
+
+.header__infos {
+  overflow: hidden;
+  list-style-type: none;
+  display:inline-block;
+  text-transform: uppercase;
+}
+
+.header__info {
+  font-family: 'Roboto-Bold', sans-serif;
+  font-size: 18px;
+  color: #ED5940;
+  float: left;
+}
+
+@media (min-width: 850px) {
+  .header__info {
+    font-size: 18px;
+  }
+}
+@media (max-width: 849px) {
+  .header__info {
+    font-size: 15px;
+  }
+}
+
+.header__info:not(:last-child):after {
+    content: " // ";
+    margin-right: 12px;
+    margin-left: 10px;
+  }
+
+/* sub-header section */
+.sub-h {
+  padding: 100px 100px 84px;
+}
+
+.sub-h__copy {
+  max-width: 997px;
+  margin: 0 auto 30px;
+  font-family: 'Roboto-Light';
+  font-size: 30px;
+  line-height: 1.6em;
+}
+
+
+/*  ember section */
+.ember {
+  background: url(img/anchor.png);
+  background-size: 8%;
+  padding: 110px 100px;
+  display: flex;
+  align-items: center;
+}
+
+.ember__container {
+  max-width: 997px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.ember__copy {
+  text-align: left;
+  color: #fff;
+  width:50%;
+}
+
+.ember__copy .t-heading {
+  color: #fff;
+}
+
+.ember__cell {
+  width: 34%;
+  margin: 0 8%;
+}
+
+.ember__logo {
+  max-width: 100%;
+}
+
+/*  lodging */
+.lodging {
+  padding: 95px 0;
+  text-align: left;
+  position: relative;
+}
+
+.lodging__image {
+  background-image: url("img/lodging.png");
+  background-size: cover;
+  background-position: center top;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.l-lodging__margin {
+  margin: 0 60px;
+}
+
+.lodging__card {
+  max-width: 593px;
+  padding: 75px 90px;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .3);
+  position: relative;
+}
+
+/* sponsors */
+.sponsors {
+  max-width: 997px;
+  padding: 80px 50px 10px;
+  margin: auto;
+}
+
+.sponsors .section__desc {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sponsors--super-steezy {
+  margin-top: 80px;
+}
+
+.sponsors__container {
+  display: flex;
+}
+
+.line {
+  border-top: 2px solid #D0DAD8;
+  flex: auto;
+  margin-top: 8px;
+}
+
+.t-subheading {
+  display: inline-block;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-size: 22px;
+  color: #98ACA8;
+  font-family: 'Roboto-Black', sans-serif;
+  text-transform: uppercase;
+  background-color: #fff;
+  }
+
+.sponsors__logos {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.sponsor__logo {
+  width: 220px;
+  margin: auto;
+}
+
+.sponsor__logo__link svg {
+  width: 100%;
+}
+
+/* tito tickets */
+.tickets {
+  background: #095949;
+  overflow: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.tickets .t-heading {
+  color: #fff;
+}
+
+/* footer */
+.footer {
+  background: #042B23;
+  font-size: 14px;
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #fff;
+  padding: 40px 0;
+
+}
+
+.footer__flex {
+  display: flex;
+  max-width: 997px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.foot-1 {
+  flex: auto;
+  text-align: left;
+}
+
+.foot-2,
+.foot-3,
+.foot-4 {
+  display: inline-block;
+  padding-left: 30px;
+}
